@@ -1,0 +1,15 @@
+spring:
+  application:
+    name: api-service
+  cloud:
+    gateway:
+      routes:
+        - id: method_route
+          uri: http://localhost:4081/
+          predicates:
+            - Method=GET,POST
+      discovery:
+        locator:
+          enabled: true
+server:
+  port: 4081
