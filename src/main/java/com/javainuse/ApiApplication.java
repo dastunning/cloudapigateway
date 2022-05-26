@@ -28,6 +28,11 @@ public class ApiApplication {
 //                        .filters(gatewayFilterSpec -> gatewayFilterSpec.setPath("/payment/check"))
                         .uri("https://api.parqour.com")
                 )
+                .route(routeSpec -> routeSpec
+                                .path("/user/**")
+//                        .filters(gatewayFilterSpec -> gatewayFilterSpec.setPath("/payment/check"))
+                                .uri("https://api.parqour.com")
+                )
                 .build();
     }
 }
