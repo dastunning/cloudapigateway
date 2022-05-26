@@ -1,4 +1,1 @@
-application.properties
-com\javainuse\controller\ApiController.class
-application.yml
 com\javainuse\ApiApplication.class

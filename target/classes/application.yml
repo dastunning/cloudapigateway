@@ -3,11 +3,17 @@ spring:
     name: api-service
   cloud:
     gateway:
+      global-filter:
+        -LoggingGlobalFilter
       routes:
         - id: method_route
           uri: http://localhost:4081/
           predicates:
+            - Path=/api/**, /payment/**
             - Method=GET,POST
+#          filters:
+#            -RedirectionFilter
+#            -BeforeRedirectionFilter
       discovery:
         locator:
           enabled: true
